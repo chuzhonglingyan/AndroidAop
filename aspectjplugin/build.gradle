@@ -31,7 +31,7 @@ uploadArchives {
             //设置插件的GAV参数
             pom.groupId = 'com.yuntian.plugin'
             pom.artifactId = 'android-aspectj-plugin'
-            pom.version = 1.0
+            pom.version = '1.0.0'
         }
     }
 }

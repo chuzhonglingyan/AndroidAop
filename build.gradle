@@ -4,8 +4,11 @@ buildscript {
     repositories {
         google()
         jcenter()
+//        maven {
+//            url uri("./aspectjplugin/repo")
+//        }
         maven {
-            url uri("./aspectjplugin/repo")
+            url 'https://dl.bintray.com/yutianyulei/maven'
         }
     }
 
@@ -18,12 +21,12 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.0-alpha09'
 
-        classpath 'com.yuntian.plugin:android-aspectj-plugin:1.0'
+        classpath 'com.yuntian.plugin:android-aspectj-plugin:1.0.0'
 
         classpath 'org.aspectj:aspectjtools:1.8.9'
         classpath 'org.aspectj:aspectjweaver:1.8.9'
 
-        classpath 'com.novoda:bintray-release:0.8.1'//上传插件
+        classpath 'com.novoda:bintray-release:0.9'//上传插件
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -68,7 +71,7 @@ def parseLocalProperties() {
 //统一声明配置
 ext {
     userOrg = 'yutianyulei'
-    website = 'https://github.com/chuzhonglingyan'
+    website = 'https://github.com/chuzhonglingyan/AndroidAop'
     licences = ['Apache-2.0']
 
 }

@@ -2,24 +2,15 @@ apply plugin: 'com.android.library'
 
 apply plugin: 'aspectj-plugin'
 
-aspectjExtension{
-    isEnable = true
-}
-
-
-
 
 android {
     compileSdkVersion 28
-
 
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
-
     }
 
     lintOptions {
@@ -32,7 +23,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation 'junit:junit:4.12'
     implementation 'org.aspectj:aspectjrt:1.8.9'
 }
 

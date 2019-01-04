@@ -1,0 +1,61 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.1.4'
+    //支持编译期和加载时代码注入
+    implementation 'org.aspectj:aspectjtools:1.8.9'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+//发布本地的maven仓库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('repo'))
+            //设置插件的GAV参数
+            pom.groupId = 'com.yuntian.plugin'
+            pom.artifactId = 'android-aspectj-plugin'
+            pom.version = 1.0
+        }
+    }
+}
+
+apply plugin: 'com.novoda.bintray-release'
+
+
+//添加
+publish {
+    userOrg = rootProject.userOrg
+    groupId = 'com.yuntian.plugin'
+    artifactId = 'android-aspectj-plugin'
+    uploadName = 'android-aspectj-plugin'
+    publishVersion = '1.0.0'
+    dryRun=false
+
+    println 'bintrayUser:'+rootProject.bintrayUser
+    println 'bintrayKey:'+rootProject.bintrayKey
+
+    bintrayUser = rootProject.bintrayUser
+    bintrayKey = rootProject.bintrayKey
+
+    desc = 'A aspectj plugin For Android Aop'
+    website = rootProject.website
+    licences = rootProject.licences
+}
+

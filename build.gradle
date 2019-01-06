@@ -14,13 +14,14 @@ buildscript {
 
     ext {
         walleVersion ='1.1.6'
+        toolsGradleVersion ='3.1.4'
         aspectjVersion ='1.8.9'
     }
 
     //Project对象与 build.gradle 是一对一的关系
     //每一个配置其实就是它对应的 Project 对象的一个方法或者一个变量值
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath "com.android.tools.build:gradle:${toolsGradleVersion}"
 
         classpath 'com.yuntian.plugin:android-aspectj-plugin:1.0.0'
 

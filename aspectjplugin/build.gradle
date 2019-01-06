@@ -5,9 +5,10 @@ apply plugin: 'maven'
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    implementation 'com.android.tools.build:gradle:3.1.4'
+    implementation "com.android.tools.build:gradle:${toolsGradleVersion}"
+
     //支持编译期和加载时代码注入
-    implementation 'org.aspectj:aspectjtools:1.8.9'
+    implementation "org.aspectj:aspectjtools:${aspectjVersion}"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
